@@ -12,4 +12,9 @@ docker login \
     -p "${DOCKER_PASSWORD?:}" \
     "${registry}"
 docker build -t "${image}" .
+docker logout
+docker login \
+    -u "${DOCKER_USERNAME?:}" \
+    -p "${DOCKER_PASSWORD?:}" \
+    "${registry}"
 docker push "${image}"
