@@ -11,7 +11,7 @@ docker login \
     -u "${DOCKER_USERNAME?:}" \
     -p "${DOCKER_PASSWORD?:}" \
     "${registry}"
-docker buildx build --platform linux/arm,linux/arm64,linux/amd64 -t "${image}" .
+docker buildx build --platform linux/arm64,linux/amd64 -t "${image}" .
 docker logout
 docker login \
     -u "${DOCKER_USERNAME?:}" \
