@@ -7,7 +7,10 @@ application_type=$(jq -r .application.type pipeline.json)
 
 case "${application_type}" in
   "java")
-    mvn clean package
+    echo "Building with gradle/wrapper"
+    #mvn clean package
+    gradle wrapper
+    ./gradlew build
     ;;
   "netcore")
     dotnet restore

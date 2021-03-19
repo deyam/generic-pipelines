@@ -8,7 +8,9 @@ test_path=$(jq -r .test.path pipeline.json)
 
 case "${application_type}" in
   "java")
-    mvn test
+    #mvn test
+    gradle wrapper
+    ./gradlew test
     ;;
   "netcore")
     # The path to the test project must be set until
