@@ -18,7 +18,7 @@ docker login \
 #docker buildx use simx-builder-multi
 #docker buildx inspect --bootstrap
 #docker buildx build --platform linux/arm64,linux/amd64 -t "${image}" .
-docker build -t "${image}"
+docker build -t "${image}" .
 docker logout
 docker login \
     -u "${DOCKER_USERNAME?:}" \
