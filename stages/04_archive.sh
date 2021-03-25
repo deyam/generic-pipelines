@@ -13,10 +13,10 @@ docker login \
     -p "${DOCKER_PASSWORD?:}" \
     "${registry}"
 #docker buildx build --platform linux/arm64,linux/amd64 -t "${image}" .
-docker build -t "${image}:${version}" .
+docker build -t "${image}" .
 docker logout
 docker login \
     -u "${DOCKER_USERNAME?:}" \
     -p "${DOCKER_PASSWORD?:}" \
     "${registry}"
-docker push "${image}:${version}"
+docker push "${image}"
